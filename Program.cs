@@ -13,7 +13,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+public void ConfigureServices(IServiceCollection services)
+{
+    ervices.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+}
+
+    app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
