@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using eTickets.Data.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTickets.Models
 {
@@ -34,7 +35,16 @@ namespace eTickets.Models
         // Library
 
         public int LibraryId { get; set; }
+        [ForeignKey("LibraryId")]
 
         public Library Library { get; set; }
+
+
+        // Publisher
+
+        public int PublisherId { get; set; }
+        [ForeignKey("PublisherId")]
+
+        public Publisher Publisher { get; set; }
     }
 }
