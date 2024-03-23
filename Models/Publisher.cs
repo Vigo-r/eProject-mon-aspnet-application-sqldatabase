@@ -8,12 +8,15 @@ namespace eTickets.Models
     public class Publisher
     {
         [Key]
-        public int Id { get; set; }
+        public int PublisherId { get; set; }
 
+        [Display(Name = "Publisher Name")]
         public string PublisherName { get; set; }
 
+        [Display(Name = "Publisher Description")]
         public string PublisherDescription { get; set; }
 
+        [Display(Name = "Publisher Picture")]
         public string PublisherPictureURL { get; set; }
 
         //Relationships

@@ -15,7 +15,7 @@ namespace eTickets.Controllers
         {
             var allPublishers= await _cotext.Publishers.ToListAsync();
 
-            return View();
+            return View(allPublishers);
         }
     }
 }
