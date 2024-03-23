@@ -14,7 +14,7 @@ namespace eTickets.Controllers
         {
             var data = _cotext.Authors.ToList();
 
-            return View();
+            return View(data);
         }
     }
 }

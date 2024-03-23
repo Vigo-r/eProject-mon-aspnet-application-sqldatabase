@@ -215,92 +215,27 @@ namespace eTickets.Data
                         },
                         new Author_Book()
                         {
-                            AuthorId = 3,
-                            BookId = 1
+                            AuthorId = 2,
+                            BookId = 2
                         },
 
                          new Author_Book()
                         {
-                            AuthorId = 1,
-                            BookId = 2
+                            AuthorId = 3,
+                            BookId = 3
                         },
                          new Author_Book()
                         {
                             AuthorId = 4,
-                            BookId = 2
-                        },
-
-                        new Author_Book()
-                        {
-                            AuthorId = 1,
-                            BookId = 3
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 2,
-                            BookId = 3
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 5,
-                            BookId = 3
-                        },
-
-
-                        new Author_Book()
-                        {
-                            AuthorId = 2,
-                            BookId = 4
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 3,
-                            BookId = 4
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 4,
                             BookId = 4
                         },
 
-
-                        new Author_Book()
-                        {
-                            AuthorId = 2,
-                            BookId = 5
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 3,
-                            BookId = 5
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 4,
-                            BookId = 5
-                        },
                         new Author_Book()
                         {
                             AuthorId = 5,
                             BookId = 5
                         },
 
-
-                        new Author_Book()
-                        {
-                            AuthorId = 3,
-                            BookId = 6
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 4,
-                            BookId = 6
-                        },
-                        new Author_Book()
-                        {
-                            AuthorId = 5,
-                            BookId = 6
-                        },
                     });
                     context.SaveChanges();
                 }
