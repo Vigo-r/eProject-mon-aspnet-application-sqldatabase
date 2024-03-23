@@ -6,14 +6,14 @@ namespace eTickets.Controllers
 {
     public class LibrariesController : Controller
     {
-        private readonly AppDbContext _cotext;
+        private readonly AppDbContext _context;
         public LibrariesController(AppDbContext context)
         {
-            _cotext = context;
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var allLibraries = await _cotext.Libraries.ToListAsync();
+            var allLibraries = await _context.Libraries.ToListAsync();
 
             return View(allLibraries);
         }

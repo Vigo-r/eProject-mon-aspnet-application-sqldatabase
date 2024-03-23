@@ -6,15 +6,14 @@ namespace eTickets.Controllers
 {
     public class PublishersController : Controller
     {
-        private readonly AppDbContext _cotext;
+        private readonly AppDbContext _context;
         public PublishersController(AppDbContext context)
         {
-            _cotext = context;
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var allPublishers= await _cotext.Publishers.ToListAsync();
-
+            var allPublishers= await _context.Publishers.ToListAsync();
             return View(allPublishers);
         }
     }

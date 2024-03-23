@@ -5,14 +5,14 @@ namespace eTickets.Controllers
 {
     public class AuthorsController : Controller
     {
-        private readonly AppDbContext _cotext;
+        private readonly AppDbContext _context;
         public AuthorsController(AppDbContext context)
         {
-            _cotext = context;
+            _context = context;
         }
         public IActionResult Index()
         {
-            var data = _cotext.Authors.ToList();
+            var data = _context.Authors.ToList();
 
             return View(data);
         }
