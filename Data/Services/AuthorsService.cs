@@ -4,22 +4,13 @@ namespace eTickets.Data.Services
 {
     public class AuthorsService : IAuthorsService
     {
+
         public void Add(Author author)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(Author entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
