@@ -5,12 +5,12 @@ namespace eTickets.Data.Services
 {
     public interface IAuthorsService
     {
-        Task<IEnumerable<Author>> GetAll();
+        Task<IEnumerable<Author>> GetAllAsync();
 
-        Author GetById(int id);
-        void Add(Author author);
+        Task<Author> GetByIdAsync(int id);
+        Task AddAsync(Author author);
 
-        Author Update(int id, Author newAuthor);
+        Task<Author> UpdateAsync(int id, Author newAuthor);
 
         void Delete(int id);
     }

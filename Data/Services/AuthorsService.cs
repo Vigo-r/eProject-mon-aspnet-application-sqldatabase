@@ -10,10 +10,10 @@ namespace eTickets.Data.Services
         {
             _context = context;
         }
-        void IAuthorsService.Add(Author author)
+        async Task IAuthorsService.AddAsync(Author author)
         {
-            _context.Authors.Add(author);
-            _context.SaveChanges();
+            await _context.Authors.AddAsync(author);
+            await _context.SaveChangesAsync();
         }
 
         void IAuthorsService.Delete(int id)
@@ -21,20 +21,23 @@ namespace eTickets.Data.Services
             throw new NotImplementedException();
         }
 
-        async Task<IEnumerable<Author>> IAuthorsService.GetAll()
+        async Task<IEnumerable<Author>> IAuthorsService.GetAllAsync()
         {
             var result = await _context.Authors.ToListAsync();
             return result;
         }
 
-        Author IAuthorsService.GetById(int id)
+        async Task<Author> IAuthorsService.GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Authors.FirstOrDefaultAsync(n => n.AuthorId == id);
+            return result;
         }
 
-        Author IAuthorsService.Update(int id, Author newAuthor)
+        async Task<Author> IAuthorsService.UpdateAsync(int id, Author newAuthor)
         {
-            throw new NotImplementedException();
+            _context.Update(newAuthor);
+            await _context.SaveChangesAsync();
+            return newAuthor;
         }
     }
 }
