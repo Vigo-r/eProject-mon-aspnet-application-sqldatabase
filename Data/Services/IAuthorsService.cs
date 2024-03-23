@@ -3,7 +3,7 @@ using eTickets.Models;
 
 namespace eTickets.Data.Services
 {
-    public interface IAuthorsService : IEntityBaseRepository<Author>
+    public interface IAuthorsService
     {
         /*
         Task<IEnumerable<Author>> GetAll();
