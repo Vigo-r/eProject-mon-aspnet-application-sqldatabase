@@ -14,10 +14,13 @@ namespace eTickets.Models
 
         public int BookId { get; set; }
 
+        [Display(Name = "Book Name")]
         public string Name { get; set; }
 
+        [Display(Name = "Book Description")]
         public string Description { get; set; }
 
+        [Display(Name = "Book Cover")]
         public string CoverURL { get; set; }
 
         public double Price { get; set; }

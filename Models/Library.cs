@@ -11,10 +11,13 @@ namespace eTickets.Models
 
         public int LibraryId { get; set; }
 
+        [Display(Name = "Library Name")]
         public string Name { get; set; }
 
+        [Display(Name = "Library Description")]
         public string Description { get; set; }
 
+        [Display(Name = "Library Logo")]
         public string Logo { get; set; }
 
         //Relationships
