@@ -6,7 +6,9 @@ namespace eTickets.Data.Enums
         Thriller = 1,
         Fiction,
         Fantasy,
-        History
+        History,
+        Nonfiction,
+        Mystery
 
     }
 }
