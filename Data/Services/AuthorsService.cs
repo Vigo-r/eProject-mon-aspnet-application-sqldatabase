@@ -1,46 +1,37 @@
 ﻿using eTickets.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Data.Services
 {
     public class AuthorsService : IAuthorsService
     {
-
-        public void Add(Author author)
+        private readonly AppDbContext _context;
+        public AuthorsService(AppDbContext context)
+        {
+            _context = context;
+        }
+        void IAuthorsService.Add(Author author)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        void IAuthorsService.Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Author> GetAll()
+        async Task<IEnumerable<Author>> IAuthorsService.GetAll()
+        {
+            var result = await _context.Authors.ToListAsync();
+            return result;
+        }
+
+        Author IAuthorsService.GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Author>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Author GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Author> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Author Update(int id, Author newAuthor)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(int id, Author entity)
+        Author IAuthorsService.Update(int id, Author newAuthor)
         {
             throw new NotImplementedException();
         }

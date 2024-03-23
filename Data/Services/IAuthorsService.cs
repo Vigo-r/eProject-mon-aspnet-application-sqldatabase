@@ -5,7 +5,7 @@ namespace eTickets.Data.Services
 {
     public interface IAuthorsService
     {
-        IEnumerable<Author> GetAll();
+        Task<IEnumerable<Author>> GetAll();
 
         Author GetById(int id);
         void Add(Author author);
