@@ -12,6 +12,6 @@ namespace eTickets.Data.Services
 
         Task<Author> UpdateAsync(int id, Author newAuthor);
 
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }
