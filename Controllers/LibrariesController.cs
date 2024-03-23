@@ -15,7 +15,7 @@ namespace eTickets.Controllers
         {
             var allLibraries = await _cotext.Libraries.ToListAsync();
 
-            return View();
+            return View(allLibraries);
         }
     }
 }
