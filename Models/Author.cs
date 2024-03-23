@@ -11,13 +11,15 @@ namespace eTickets.Models
         public int AuthorId { get; set; }
 
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage ="Full Name Is Required")]
         public string FullName { get; set; }
 
         [Display(Name = "Biography")]
-
+        [Required(ErrorMessage = "Biography Is Required")]
         public string Bio { get; set; }
 
         [Display(Name = "Profile Picture")]
+        [Required(ErrorMessage = "Profile Picture Is Required")]
         public string ProfilePictureURL { get; set; }
 
         //Relationships

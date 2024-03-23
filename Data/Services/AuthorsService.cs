@@ -12,7 +12,8 @@ namespace eTickets.Data.Services
         }
         void IAuthorsService.Add(Author author)
         {
-            throw new NotImplementedException();
+            _context.Authors.Add(author);
+            _context.SaveChanges();
         }
 
         void IAuthorsService.Delete(int id)
