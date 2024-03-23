@@ -8,7 +8,7 @@ namespace eTickets.Models
     public class Author
     {
         [Key]   
-        public int AuthorId { get; set; }
+        public int Id { get; set; }
         public string FullName { get; set; }
 
         public string Bio { get; set; }

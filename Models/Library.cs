@@ -9,7 +9,7 @@ namespace eTickets.Models
     {
         [Key]
 
-        public int LibraryId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

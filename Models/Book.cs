@@ -12,7 +12,7 @@ namespace eTickets.Models
     {
         [Key]
 
-        public int BookId { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

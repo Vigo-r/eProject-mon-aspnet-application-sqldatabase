@@ -10,10 +10,11 @@ namespace eTickets.Data
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
-       
+                if (!context.Libraries.Any())
                 {
                     context.Libraries.AddRange(new List<Library>()
                     {
+
                         new Library()
                         {
                             Name = "Library 1",
