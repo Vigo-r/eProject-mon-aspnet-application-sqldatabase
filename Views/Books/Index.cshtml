@@ -29,9 +29,8 @@
                             <div class="card-body">
                                 <p class="card-text">@item.Description</p>
                                 @*<p class="card-text"><b>Library: </b>@item.Library.Name</p>*@
-                                <p class="card-text"><b>Category: </b>@item.BookGenre</p>
-                                <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
-                                <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
+                                <p class="card-text"><b>Genre: </b>@item.BookGenre</p>
+                                <p class="card-text"><b>Release date: </b>@item.EndDate.ToString("dd MMM yy")</p>
                                 <p class="card-text ">
                                     <b>Status: </b>
                                     @if (DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
@@ -40,11 +39,11 @@
                                     }
                                     else if (DateTime.Now > item.EndDate)
                                     {
-                                        <span class="badge bg-danger text-white">EXPIRED</span>
+                                    <span class="badge bg-danger text-white">NOT AVAILABLE</span>
                                     }
                                     else
                                     {
-                                        <span class="badge bg-primary text-white">UPCOMING</span>
+                                        <span class="badge bg-primary text-white">WAITING FOR STOCK</span>
                                     }
                                 </p>
 
