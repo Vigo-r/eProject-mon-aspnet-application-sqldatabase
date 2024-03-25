@@ -8,7 +8,7 @@ namespace eTickets.Data.Enums
         Fantasy,
         History,
         Nonfiction,
-        Mystery
-
+        Mystery,
+        ScienceFiction
     }
 }
