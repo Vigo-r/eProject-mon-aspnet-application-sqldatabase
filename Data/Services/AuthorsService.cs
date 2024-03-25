@@ -1,45 +1,57 @@
 ﻿using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace eTickets.Data.Services
 {
     public class AuthorsService : IAuthorsService
     {
         private readonly AppDbContext _context;
+
         public AuthorsService(AppDbContext context)
         {
             _context = context;
         }
-        async Task IAuthorsService.AddAsync(Author author)
+
+        public async Task AddAsync(Author author)
         {
             await _context.Authors.AddAsync(author);
             await _context.SaveChangesAsync();
         }
 
-        async Task IAuthorsService.DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            var result = await _context.Authors.FirstOrDefaultAsync(n => n.AuthorId == id);
-            _context.Authors.Remove(result);
-            await _context.SaveChangesAsync();
+            var authorToDelete = await _context.Authors.FindAsync(id);
+            if (authorToDelete != null)
+            {
+                _context.Authors.Remove(authorToDelete);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        async Task<IEnumerable<Author>> IAuthorsService.GetAllAsync()
+        public async Task<IEnumerable<Author>> GetAllAsync()
         {
-            var result = await _context.Authors.ToListAsync();
-            return result;
+            return await _context.Authors.ToListAsync();
         }
 
-        async Task<Author> IAuthorsService.GetByIdAsync(int id)
+        public async Task<Author> GetByIdAsync(int id)
         {
-            var result = await _context.Authors.FirstOrDefaultAsync(n => n.AuthorId == id);
-            return result;
+            return await _context.Authors.FirstOrDefaultAsync(n => n.AuthorId == id);
         }
 
-        async Task<Author> IAuthorsService.UpdateAsync(int id, Author newAuthor)
+        public async Task<Author> UpdateAsync(int id, Author newAuthor)
         {
-            _context.Update(newAuthor);
-            await _context.SaveChangesAsync();
-            return newAuthor;
+            var authorToUpdate = await _context.Authors.FirstOrDefaultAsync(a => a.AuthorId == id);
+            if (authorToUpdate != null)
+            {
+                authorToUpdate.FullName = newAuthor.FullName;
+                authorToUpdate.Bio = newAuthor.Bio;
+                // Update other fields as necessary
+                await _context.SaveChangesAsync();
+                return authorToUpdate;
+            }
+            return null;
         }
     }
 }
