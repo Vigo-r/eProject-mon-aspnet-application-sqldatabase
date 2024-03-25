@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eTickets", "eTickets.csproj", "{0B391E76-F4B7-4CD3-BB69-31EB3D9BCE8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETickets.Tests", "..\ETickets.Test\ETickets.Tests.csproj", "{90FDCC96-E586-4A47-BCA7-6CACECC82543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ETickets.Tests", "..\ETickets.Test\ETickets.Tests.csproj", "{90FDCC96-E586-4A47-BCA7-6CACECC82543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
